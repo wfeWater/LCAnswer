@@ -51,6 +51,7 @@ public class LevelTravel {
 					q.add(tmp.right);
 				}
 			}
+			resX.add(inner);
 //			levels++;
 		}
 		return resX;

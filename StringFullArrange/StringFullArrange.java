@@ -1,3 +1,4 @@
+import java.util.*;
 public class StringFullArrange {
 	public static void permutation(String input) {
 		if (input == null || input.length() <= 0) {
@@ -9,7 +10,12 @@ public class StringFullArrange {
 		if (input.length-1 == position) {
 			System.out.println(input);
 		}
+		HashSet<Character> hs = new HashSet<>();
 		for (int i = position; i < input.length; i++) {
+			if (hs.contains(input[i])) {
+				continue;
+			}
+			hs.add(input[i]);
 			char tmp = input[i];
 			input[i] = input[position];
 			input[position] = tmp;
@@ -20,7 +26,7 @@ public class StringFullArrange {
 		}
 	}
 	public static void main(String[] args) {
-		String test = "abcd";
+		String test = "aab";
 		permutation(test);
 	}
 }

@@ -13,6 +13,8 @@ public class TreeToList {
 	
 	public static TreeNode convertTree(TreeNode root) {
 		visit(root);
+		head.right = tail;
+		tail.left = head;
 		return head;
 	}
 	public static void visit(TreeNode root) {
